@@ -155,7 +155,10 @@
         });
         */
 
+
         fadeOut( document.getElementsByTagName('h1')[0] );
+
+        /*
         
         if ( !navigator.userAgent.match(/mobile|iphone|ipad|ipod|android|blackberry|iemobile|facebook/i) ) {
             var musique_concrete = document.getElementById( 'musique_concrete' );
@@ -170,8 +173,10 @@
                 'eventLabel': musique_concrete.src,
                 'nonInteraction': true
             });
-            */
         }
+        */
+
+        /*
         var scene = getNextScene();
         audio.play(scene.audio, true);
         images.swap(scene.image);
@@ -195,6 +200,14 @@
             audio.play(data.audio);
             images.swap(data.image);
         }, false );
+
+        */
+
+        Player.change_channel(-1);
+
+        setInterval(function(){
+            Player.switch_media();
+        }, 3000);
     };
 
 })();
