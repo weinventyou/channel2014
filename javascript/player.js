@@ -77,7 +77,7 @@ function shuffle_array(array) {
 
 Player.get_possible_media = function(type) {
     if(Player.current_channel != -1) {
-        return Config.channels[type].slice(0)
+        return Config.channels[type].slice(0);
     } else {
         //if the channel is all, grab the media from each channel
         var media = [];
@@ -90,7 +90,7 @@ Player.get_possible_media = function(type) {
 
 Player.invalid_channel = function(channel) {
     if (Config.channels.length == 0 ||
-        channel > Config.channels.length + 1
+        channel > Config.channels.length + 1 ||
         channel < -1) {
         return true;
     } else {
