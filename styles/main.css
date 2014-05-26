@@ -229,3 +229,13 @@ and (max-device-width : 800px) {
   margin: 0 0 0 -100px;
   text-align: center;
 }
+#channel-buttons {
+  position:absolute;
+  left:0px;
+  top:0px;
+  background: white;
+  visibility: hidden;
+}
+#channel-buttons .selected {
+    font-weight: bold;
+}

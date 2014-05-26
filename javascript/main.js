@@ -155,8 +155,9 @@
         });
         */
 
-
+        drawChannelButtons()
         fadeOut( document.getElementsByTagName('h1')[0] );
+        $("#channel-buttons").css("visibility", "visible");
 
         /*
         
@@ -203,6 +204,7 @@
 
         */
 
+
         Player.change_channel(-1);
 
         setInterval(function(){
@@ -231,3 +233,23 @@ function toggleInfo(){
 $(document).ready(function() {
     $("#info-btn").click(toggleInfo);
 });
+
+function drawChannelButtons() {
+    $("#channel-buttons ul").append(channelButtonHTML(-1, "All", true));
+
+    for(var index = 0; index < Config.channels.length; index++) {
+        $("#channel-buttons ul").append(channelButtonHTML(index, Config.channels[index].title));
+    }
+            
+}
+
+function channelButtonHTML(channel, name, selected) {
+    var element_class = selected ? "selected" : "";
+    return "<li class='" + element_class + "'><a href='#' onclick='selectChannel(this, " + channel + "); return false;'>" + name + "</a></li>"
+}
+
+function selectChannel(button, channel) {
+    $("#channel-buttons .selected").removeClass("selected");
+    Player.change_channel(channel);
+    $(button).parent("li").addClass("selected");
+}
