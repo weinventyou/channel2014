@@ -206,10 +206,6 @@
 
 
         Player.change_channel(-1);
-
-        setInterval(function(){
-            Player.switch_media();
-        }, 3000);
     };
 
 })();
@@ -232,6 +228,11 @@ function toggleInfo(){
 
 $(document).ready(function() {
     $("#info-btn").click(toggleInfo);
+
+    $("audio#musique_concrete").bind("ended", function () {
+        Player.switch_media();
+    });
+
 });
 
 function drawChannelButtons() {

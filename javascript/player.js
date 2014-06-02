@@ -49,7 +49,14 @@ Player.switch_image = function() {
 }
 
 Player.switch_audio = function() {
+    var jq_element = $("#musique_concrete");
+    if(jq_element.length < 1)
+        return;
 
+    var element = jq_element[0];
+    element.preload = true;
+    element.src = Player.next_audio;
+    element.play();
 }
 
 Player.change_channel = function(channel) {
