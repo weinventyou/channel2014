@@ -7,7 +7,7 @@ body {
 }
 
 html {
-    font-family: sans-serif;
+    font-family: Helvetica, sans-serif;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
 }
@@ -23,45 +23,29 @@ body {
 
 h1 {
     clear: both;
-    font-size: 2em;
     text-align: center;
     display: block;
-    color: #dacdb8;
-    text-transform: uppercase;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    position:relative;
-    top: 30%;
+    position: relative;
+    top: 40%;
     margin: 0 auto;
 }
 
 #JoinButton {
-    cursor: pointer;
-    position: relative;
-    background: #e96e57;
-    color: white;
-    font-weight: 500;
-    letter-spacing: 1px;
-    border-radius: 3px;
-    padding: 1em 1.5em;
-    margin: 0 10px;
-    box-shadow: 0 4px #AC422E;
+    border-radius: 100em;
+    margin: 0;
+    border-top: 10px #000 solid;
+    border-bottom: 10px #000 solid;
+    padding: 100px;
+    opacity: 0.75;
+    filter: alpha(opacity=75);
 }
 
-#JoinButton:hover {
-    top: 2px;
-    box-shadow: 0 2px #AC422E;
-}
-
-#JoinButton:active {
-    cursor: pointer;
-    top: 4px;
-    box-shadow: none;
-}
 
 bio,
 social_twitter,
@@ -99,33 +83,15 @@ social_twitter {
     width: 100px;
 }
 
-#AboutButton {
-    text-decoration: none; color: #FFFFFF; background: #e96e57; border-radius: 3px; 
-    display: inline-block; height: 20px; line-height: 20px; margin-left: 5px; margin-top: 25px; overflow: hidden; text-align: center; padding: 0 5px;
-    position: absolute;
-    left: 0;
-    z-index: 10;
-    width: 45px;
-}
 #hideaway {
-    display:none; border:0px; margin:0px; 
-    position: absolute; top: -5px; left: 0; 
-    width: 320px; text-align: left;
-}
-#AboutContent {
-    background: white; background: rgba(255,255,255,.6); 
-    color: #000; font-weight: bold; text-decoration: none; 
-    padding: 50px 0 0 0; margin-left: auto; heighttext-align: left; z-index:-1; 
-    opacity: 0.75; filter:alpha(opacity=75); 
-    box-shadow: -2px 2px 5px rgba(0,0,0,0.15); 
-    border: 1px solid #fff;
-    border: 1px solid rgba(255,255,255,.65);
-    border-right: 0;
-    border-top: 0;
-}
-#AboutContent p {
-    padding: 7px;
-    margin: 0 0 0 0px;
+    display:none;
+    border:0px;
+    margin:0px;
+    position: absolute;
+    top: -5px;
+    left: 0;
+    width: 320px;
+    text-align: left;
 }
 
 @media only screen and (max-width : 1000px) {
@@ -156,14 +122,12 @@ and (max-width : 600px) {
     }
 }
 
-
 @media only screen
 and (max-width : 400px) {
     #AboutButton span { display: none; }
     #hideaway { width: auto; padding: 0; margin: 0; }
     #AboutContent { width: inherit; border: none; border-bottom: 1px solid #fff;  }
 }
-
 
 @media only screen
 and (max-device-width : 800px) {
@@ -173,69 +137,120 @@ and (max-device-width : 800px) {
     }
 }
 
-
 /* all new styles after this point */
+
+#sine {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url(../images/sinewave.gif) no-repeat center fixed;
+    opacity: 0.10;
+    filter: alpha(opacity=10);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
 #info-btn {
-  width: 38px;
-  height: 37px;
-  position: absolute;
-  cursor: pointer;
-  z-index: 9;
-  top: 16px;
-  right: 16px;
-  background: url("../images/info_buttons.png");
-  background-size: 100%;
-  background-repeat: no-repeat;
+    width: 38px;
+    height: 37px;
+    position: absolute;
+    cursor: pointer;
+    z-index: 9;
+    top: 16px;
+    right: 16px;
+    background: url("../images/info_buttons2.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
 }
 #info-btn:hover {
-  background-position: 0 -76px;
+    background-position: 0 -76px;
 }
 #info-btn.show {
-  background-position: 0 -38px;
+    background-position: 0 -38px;
 }
-#info-overlay {
-  width: 100%;
-  height: 100%;
-  background: #fff;
-  left: 100%;
-  top: 0px;
-  position: absolute;
-  z-index: 6;
-  text-align: center;
-  -webkit-transition: opacity 0.2s ease-out;
-  -moz-transition: opacity 0.2s ease-out;
-  -ms-transition: opacity 0.2s ease-out;
-  transition: opacity 0.2s ease-out;
-  opacity: 0;
+#info-overlay { /* lex made some changes here */
+    text-align: right;
+    display: none;
+    margin: 0;
+    background: #fff;
+    width: 100%;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+    position: absolute;
+    z-index: 6;
+    text-align: center;
+    -webkit-transition: opacity 0.2s ease-out;
+    -moz-transition: opacity 0.2s ease-out;
+    -ms-transition: opacity 0.2s ease-out;
+    transition: opacity 0.2s ease-out;
 }
 #info-overlay.show {
-  opacity: 1;
-  left: 0px;
+    display: block;
+    opacity: 0.85;
+    filter: alpha(opacity=85);
 }
 #info-overlay #text {
-  position: absolute;
-  width: 70%;
-  height: 80%;
-  display: table;
-  top: 0px;
-  left: 15%;
+    position: absolute;
+    width: 60%;
+    display: table;
+    margin-top: 10%;
+    margin-left: 20%;
 }
 #info-overlay #social {
-  position: fixed;
-  left: 50%;
-  bottom: 80px;
-  width: 200px;
-  height: 40px;
-  margin: 0 0 0 -100px;
-  text-align: center;
+    position: fixed;
+    left: 50%;
+    bottom: 80px;
+    width: 200px;
+    height: 40px;
+    margin: 0 0 0 -100px;
+    text-align: center;
 }
 #channel-buttons {
-  position:absolute;
-  left:0px;
-  top:0px;
-  background: white;
-  visibility: hidden;
+    font-size: 12pt;
+    position: absolute;
+    right: 16px;
+    top: 48px;
+    margin: 0;
 }
-#channel-buttons .selected {
+
+#channel-buttons li {
+    text-align: center;
+    list-style-type: none;
     font-weight: bold;
+    background-color: #fff;
+    height: 20px;
+    width: 20px;
+    padding: 10px;
+    margin: 0px;
+    margin-bottom: 5px;
+    text-transform: uppercase;
 }
+#channel-buttons li:hover {
+    background-color: #eee;
+    border-radius: 50px;
+}
+#channel-buttons li.selected {
+    background-color: #000;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 50px;
+}
+a:link      {text-decoration: none; color: #000}
+a:visited   {text-decoration: none; color: #000}
+a:hover         {text-decoration: none; color: #000}
+a:active    {text-decoration: none; color: #000}
+
+#info-overlay a:link        {text-decoration: none; color: #00f}
+#info-overlay a:visited     {text-decoration: none; color: #00f}
+#info-overlay a:hover       {text-decoration: none; color: #00f}
+#info-overlay a:active      {text-decoration: none; color: #00f}
+
+#channel-buttons li.selected a:link         {text-decoration: none; color: #fff}
+#channel-buttons li.selected a:visited  {text-decoration: none; color: #fff}
+#channel-buttons li.selected a:hover        {text-decoration: none; color: #fff}
+#channel-buttons li.selected a:active       {text-decoration: none; color: #fff}

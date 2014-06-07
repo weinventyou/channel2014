@@ -236,7 +236,7 @@ $(document).ready(function() {
 });
 
 function drawChannelButtons() {
-    $("#channel-buttons ul").append(channelButtonHTML(-1, "All", true));
+    $("#channel-buttons ul").append(channelButtonHTML(-1, "!", true));
 
     for(var index = 0; index < Config.channels.length; index++) {
         $("#channel-buttons ul").append(channelButtonHTML(index, Config.channels[index].title));
