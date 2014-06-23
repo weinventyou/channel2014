@@ -20,8 +20,8 @@ Player.switch_media = function(){
     this.next_image = this.on_deck_images.pop();
     this.next_audio = this.on_deck_audio.pop();
 
-    this.switch_image();
-    this.switch_audio();
+    this.switch_media_lazy(this.next_image, this.next_audio);
+    //this.switch_audio();
 }
 
 Player.prepare_image_list = function() {
@@ -42,6 +42,31 @@ Player.prepare_audio_list = function() {
     }
     shuffle_array(possible_media);
     this.on_deck_audio = possible_media;
+}
+
+Player.switch_media_lazy = function(image_url, audio_url) {
+    var temp_image = document.createElement('img');
+    var self = this;
+    temp_image.onload = function(){
+        var element = self.get_audio_element(audio_url);
+        document.body.style.backgroundImage = 'url(' + image_url + ')';
+        element.play();
+    };
+    temp_image.src = image_url;
+}
+
+Player.get_audio_element = function(audio_url) {
+    var jq_element = $("#musique_concrete");
+    if(jq_element.length < 1) {
+        var husk = new Object();
+        husk.play = function() {};
+        return husk;
+    }
+
+    var element = jq_element[0];
+    element.preload = true;
+    element.src = audio_url;
+    return element;
 }
 
 Player.switch_image = function() {
