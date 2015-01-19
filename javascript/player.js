@@ -45,7 +45,7 @@ Player.prepare_audio_list = function() {
 }
 
 Player.switch_media_lazy = function(image_url, audio_url) {
-    var temp_image = document.getElementById("img");
+    var temp_image = document.getElementById("bgvideo");
     var self = this;
     temp_image.onload = function(){
         var element = self.get_audio_element(audio_url);
@@ -107,7 +107,6 @@ function shuffle_array(array) {
     }
     return array;
 }
-
 
 Player.get_possible_media = function(type) {
     if(Player.current_channel != -1) {
