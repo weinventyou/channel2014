@@ -98,18 +98,6 @@ Player.change_channel = function(channel) {
 
 }
 
-<!--attempt at making a keypress trigger the next clip-->
-
-
-window.addEventListener("keypress", checkKeyPressed, false);
- 
-function checkKeyPressed(e) {
-    Player.switch_media();
-        
-    };
-
-<!--end of attempt-->
-
 function shuffle_array(array) {
     for (var i = array.length - 1; i > 0; i--) {
         var j = Math.floor(Math.random() * (i + 1));

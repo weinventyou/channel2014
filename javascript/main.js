@@ -230,10 +230,21 @@ function toggleInfo(){
 $(document).ready(function() {
     $("#info-btn").click(toggleInfo);
 
-    $("audio#musique_concrete").bind("ended", function () {
+    $("video#img").on("ended", function () {
         Player.switch_media();
     });
 
+});
+
+$(document).keydown(function(e) {
+    switch(e.which) {
+        case 39: // right
+        Player.switch_media();
+        break;
+
+        default: return; // exit this handler for other keys
+    }
+    e.preventDefault(); // prevent the default action (scroll / move caret)
 });
 
 function drawChannelButtons() {
