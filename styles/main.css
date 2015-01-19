@@ -21,8 +21,24 @@ body {
     text-align: center;
 }
 
+video { 
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+   background: #CCC; 
+  background-size: cover;
+  transition: 1s opacity;
+}
+
+
 h1 {
     clear: both;
+	color: #FFFFFF;
     text-align: center;
     display: block;
     -webkit-touch-callout: none;
@@ -39,8 +55,8 @@ h1 {
 #JoinButton {
     border-radius: 100em;
     margin: 0;
-    border-top: 10px #000 solid;
-    border-bottom: 10px #000 solid;
+    border-top: 10px #FFF solid;
+    border-bottom: 10px #FFF solid;
     padding: 100px;
     opacity: 0.75;
     filter: alpha(opacity=75);
@@ -139,13 +155,13 @@ and (max-device-width : 800px) {
 
 /* all new styles after this point */
 
-#sine {
+#overlayGIF {
     height: 100%;
     width: 100%;
     position: absolute;
     top: 0;
     left: 0;
-    background: url(../images/sinewave.gif) no-repeat center fixed;
+    background: url(file:///Macintosh%20HD/Users/ZS/Desktop/30SecStories%20copy%20for%20Kyle/images/colorwheel.gif) no-repeat center fixed;
     opacity: 0.10;
     filter: alpha(opacity=10);
     -webkit-background-size: cover;
@@ -162,7 +178,7 @@ and (max-device-width : 800px) {
     z-index: 9;
     top: 16px;
     right: 16px;
-    background: url("../images/info_buttons2.png");
+    background: url("https://s3.amazonaws.com/thirtysecondstories.com/images/info_buttons2.png");
     background-size: 100%;
     background-repeat: no-repeat;
 }
@@ -222,9 +238,9 @@ and (max-device-width : 800px) {
     text-align: center;
     list-style-type: none;
     font-weight: bold;
-    background-color: #fff;
+    background-color: #f9ff99;
     height: 20px;
-    width: 20px;
+    width: 100px;
     padding: 10px;
     margin: 0px;
     margin-bottom: 5px;

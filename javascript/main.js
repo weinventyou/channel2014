@@ -42,13 +42,14 @@
 
     CCB_Audio.prototype.ref = function( ) {
         if ( this.length > 0 ) {
-            return 'https://s3.amazonaws.com/conferencecall.biz/audio/' + this.sample( ) + '.mp3';
-        } else {
+            return 'https://s3.amazonaws.com/thirtysecondstories.com/audio/channels/' + this.sample( ) + '.mp3';
+        } else {    
             this.range( );
 
             return this.ref( );
         }
     }
+
 
     CCB_Audio.prototype.play = function(url, force_play) {
         var element = this.element;
@@ -79,8 +80,8 @@
 
     CCB_Image.prototype.ref = function( ) {
         if ( this.length > 0 ) {
-            return 'url(https://s3.amazonaws.com/conferencecall.biz/images/' + this.sample( ) + '.gif)';
-        } else {
+            return 'url(https://s3.amazonaws.com/thirtysecondstories.com/images/channels/' + this.sample( ) + '.mov)';
+        } else {       
             this.range( );
             return this.ref( );
         }
@@ -98,9 +99,9 @@
         });
         */
     }
-    var audio = new CCB_Audio( 79, document.getElementById('foreground_track') );
+    var audio = new CCB_Audio( 8, document.getElementById('foreground_track') );
 
-    var images = new CCB_Image( 29 );
+    var images = new CCB_Image( 4 );
     
     function preloadScene() {
         data = {};
@@ -236,7 +237,7 @@ $(document).ready(function() {
 });
 
 function drawChannelButtons() {
-    $("#channel-buttons ul").append(channelButtonHTML(-1, "!", true));
+    $("#channel-buttons ul").append(channelButtonHTML(-1, "RANDOM", true));
 
     for(var index = 0; index < Config.channels.length; index++) {
         $("#channel-buttons ul").append(channelButtonHTML(index, Config.channels[index].title));

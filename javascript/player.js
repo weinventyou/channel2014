@@ -45,11 +45,11 @@ Player.prepare_audio_list = function() {
 }
 
 Player.switch_media_lazy = function(image_url, audio_url) {
-    var temp_image = document.createElement('img');
+    var temp_image = document.getElementById("img");
     var self = this;
     temp_image.onload = function(){
         var element = self.get_audio_element(audio_url);
-        document.body.style.backgroundImage = 'url(' + image_url + ')';
+        document.body.style.backgroundImage = 'url(' + image_url + ')'; 
         element.play();
     };
     temp_image.src = image_url;
@@ -73,6 +73,8 @@ Player.switch_image = function() {
     document.body.style.backgroundImage = 'url(' + Player.next_image + ')';
 }
 
+
+
 Player.switch_audio = function() {
     var jq_element = $("#musique_concrete");
     if(jq_element.length < 1)
@@ -95,6 +97,18 @@ Player.change_channel = function(channel) {
     this.switch_media();
 
 }
+
+<!--attempt at making a keypress trigger the next clip-->
+
+
+window.addEventListener("keypress", checkKeyPressed, false);
+ 
+function checkKeyPressed(e) {
+    Player.switch_media();
+        
+    };
+
+<!--end of attempt-->
 
 function shuffle_array(array) {
     for (var i = array.length - 1; i > 0; i--) {
