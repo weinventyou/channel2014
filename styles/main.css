@@ -30,7 +30,7 @@ video {
   width: auto;
   height: auto;
   z-index: -100;
-   background: #CCC; 
+   background: #000000; 
   background-size: cover;
   transition: 1s opacity;
 }
@@ -155,20 +155,6 @@ and (max-device-width : 800px) {
 
 /* all new styles after this point */
 
-#overlayGIF {
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background: url(file:///Macintosh%20HD/Users/ZS/Desktop/30SecStories%20copy%20for%20Kyle/images/colorwheel.gif) no-repeat center fixed;
-    opacity: 0.10;
-    filter: alpha(opacity=10);
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-}
 
 #info-btn {
     width: 38px;
@@ -238,7 +224,8 @@ and (max-device-width : 800px) {
     text-align: center;
     list-style-type: none;
     font-weight: bold;
-    background-color: #f9ff99;
+    background-color: #FFFFFF;
+	opacity: 0.7;
     height: 20px;
     width: 100px;
     padding: 10px;
