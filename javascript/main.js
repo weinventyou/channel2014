@@ -112,7 +112,7 @@
         audioEl.preload = "auto";
         audioEl.src = data.audio;
         
-        var imgEl = document.createElement('img');
+        var imgEl = document.createElement('bgvideo');
         imgEl.onload = function(){  };
         imgEl.src = data.image;
     }
@@ -202,7 +202,6 @@
             audio.play(data.audio);
             images.swap(data.image);
         }, false );
-
         */
 
 
@@ -230,7 +229,7 @@ function toggleInfo(){
 $(document).ready(function() {
     $("#info-btn").click(toggleInfo);
 
-    $("video#img").on("ended", function () {
+    $("video#bgvideo").on("ended", function () {
         Player.switch_media();
     });
 
