@@ -27,6 +27,13 @@ function enterSite(self) {
     drawChannelButtons();
     $(self).parent().fadeOut(5000);
     Player.change_channel(-1);
+
+    $(document).keydown(function(e) {
+        SPACEBAR_KEYCODE = 32;
+        if (e.keyCode == SPACEBAR_KEYCODE) {
+            Player.switch_media();
+        }
+    });
 }
 
 $(document).ready(function() {
@@ -39,9 +46,4 @@ $(document).ready(function() {
     $("video#bgvideo").on("ended", function () {
         Player.switch_media();
     });
-
-    $(this).keydown(function(e) {
-        Player.switch_media();
-    });
-
 });
