@@ -175,7 +175,7 @@ and (max-device-width : 800px) {
     background-position: 0 -38px;
 }
 #info-overlay { /* lex made some changes here */
-    text-align: right;
+    
     display: none;
     margin: 0;
     background: #fff;
@@ -185,7 +185,7 @@ and (max-device-width : 800px) {
     top: 0px;
     position: absolute;
     z-index: 6;
-    text-align: center;
+    text-align: left;
     -webkit-transition: opacity 0.2s ease-out;
     -moz-transition: opacity 0.2s ease-out;
     -ms-transition: opacity 0.2s ease-out;
@@ -203,6 +203,16 @@ and (max-device-width : 800px) {
     margin-top: 10%;
     margin-left: 20%;
 }
+
+#info-overlay #title {
+    font-size: 250%;
+	position: relative;
+    width: 60%;
+    display: table;
+    margin-top: 10%;
+    margin-left: 20%;
+}
+
 #info-overlay #social {
     position: fixed;
     left: 50%;
@@ -248,10 +258,10 @@ a:visited   {text-decoration: none; color: #000}
 a:hover         {text-decoration: none; color: #000}
 a:active    {text-decoration: none; color: #000}
 
-#info-overlay a:link        {text-decoration: none; color: #00f}
-#info-overlay a:visited     {text-decoration: none; color: #00f}
-#info-overlay a:hover       {text-decoration: none; color: #00f}
-#info-overlay a:active      {text-decoration: none; color: #00f}
+#info-overlay a:link        {text-decoration: none; color: #039}
+#info-overlay a:visited     {text-decoration: none; color: #039}
+#info-overlay a:hover       {text-decoration: none; color: #039}
+#info-overlay a:active      {text-decoration: none; color: #039}
 
 #channel-buttons li.selected a:link         {text-decoration: none; color: #fff}
 #channel-buttons li.selected a:visited  {text-decoration: none; color: #fff}
