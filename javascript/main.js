@@ -37,7 +37,7 @@ function enterSite(self) {
 }
 
 $(document).ready(function() {
-    $('#JoinButton').click(function() {
+    $('#JoinButton').one("click", function() {
         enterSite(this);
     });
 
