@@ -1,89 +1,41 @@
 function Player(){}
 
 //attributes
-Player.on_deck_images = [];
-Player.on_deck_audio = [];
-
-Player.next_image = null;
-Player.next_audio = null;
-
+Player.on_deck_videos = [];
+Player.next_video = null;
 Player.current_channel = -1;
 
 //methods
 Player.switch_media = function(){
-    if(this.on_deck_images.length == 0) {
-        this.prepare_image_list();
+    if(this.on_deck_videos.length == 0) {
+        this.prepare_video_list();
     }
-    if(this.on_deck_audio.length == 0) {
-        this.prepare_audio_list();
-    }
-    this.next_image = this.on_deck_images.pop();
-    this.next_audio = this.on_deck_audio.pop();
-
-    this.switch_media_lazy(this.next_image, this.next_audio);
-    //this.switch_audio();
+    this.next_video = this.on_deck_videos.pop();
+    this.switch_video(this.next_video);
 }
 
-Player.prepare_image_list = function() {
-    var possible_media = Player.get_possible_media("images");
+Player.prepare_video_list = function() {
+    var possible_media = Player.get_possible_media("videos");
     //turn them into URLs
     for(var index = 0; index < possible_media.length; index++) {
-        possible_media[index] = Config.base_asset_path + Config.image_path + possible_media[index];
+        possible_media[index] = Config.base_asset_path + Config.video_path + possible_media[index];
     }
     shuffle_array(possible_media);
-    this.on_deck_images = possible_media;
+    this.on_deck_videos = possible_media;
 }
 
-Player.prepare_audio_list = function() {
-    var possible_media = Player.get_possible_media("audios");
-    //turn them into URLs
-    for(var index = 0; index < possible_media.length; index++) {
-        possible_media[index] = Config.base_asset_path + Config.audio_path + possible_media[index];
-    }
-    shuffle_array(possible_media);
-    this.on_deck_audio = possible_media;
-}
-
-Player.switch_media_lazy = function(image_url, audio_url) {
-    var temp_image = document.getElementById("bgvideo");
+Player.switch_media_lazy = function(video_url) {
+    var temp_video = document.getElementById("bgvideo");
     var self = this;
-    temp_image.onload = function(){
-        var element = self.get_audio_element(audio_url);
-        document.body.style.backgroundImage = 'url(' + image_url + ')'; 
-        element.play();
+    temp_video.onload = function(){
+        document.body.style.backgroundImage = 'url(' + video_url + ')';
     };
-    temp_image.src = image_url;
+    temp_video.src = video_url;
 }
 
-Player.get_audio_element = function(audio_url) {
-    var jq_element = $("#musique_concrete");
-    if(jq_element.length < 1) {
-        var husk = new Object();
-        husk.play = function() {};
-        return husk;
-    }
-
-    var element = jq_element[0];
-    element.preload = true;
-    element.src = audio_url;
-    return element;
-}
-
-Player.switch_image = function() {
-    document.body.style.backgroundImage = 'url(' + Player.next_image + ')';
-}
-
-
-
-Player.switch_audio = function() {
-    var jq_element = $("#musique_concrete");
-    if(jq_element.length < 1)
-        return;
-
-    var element = jq_element[0];
-    element.preload = true;
-    element.src = Player.next_audio;
-    element.play();
+Player.switch_video = function(video_url) {
+    var temp_video = document.getElementById("bgvideo");
+    temp_video.src = video_url;
 }
 
 Player.change_channel = function(channel) {
@@ -92,8 +44,7 @@ Player.change_channel = function(channel) {
         return;
     }
     this.current_channel = channel;
-    this.on_deck_images = [];
-    this.on_deck_audio = [];
+    this.on_deck_videos = [];
     this.switch_media();
 
 }
