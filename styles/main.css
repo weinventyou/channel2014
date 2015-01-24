@@ -35,7 +35,6 @@ video {
   transition: 1s opacity;
 }
 
-
 h1 {
     clear: both;
 	color: #FFFFFF;
@@ -48,20 +47,36 @@ h1 {
     -ms-user-select: none;
     user-select: none;
     position: relative;
-    top: 40%;
-    margin: 0 auto;
+    top: 10%;
+    
+	
 }
 
 #JoinButton {
+	position: absolute;
+	left: 40%;
+	right: 40%;
     border-radius: 100em;
-    margin: 0;
-    border-top: 10px #FFF solid;
-    border-bottom: 10px #FFF solid;
-    padding: 100px;
+    margin-top: 200px;
+	margin-right: auto;
+	margin-left: auto; 
+    border-top: 2px #FFF solid;
+    border-bottom: 2px #FFF solid;
+    padding: 30px;
+	background-color: #333;
     opacity: 0.75;
     filter: alpha(opacity=75);
 }
 
+.share-buttons{
+	list-style: none;
+}
+
+
+
+.share-buttons li{
+	display: inline;
+}
 
 bio,
 social_twitter,
@@ -155,6 +170,22 @@ and (max-device-width : 800px) {
 
 /* all new styles after this point */
 
+#splashtitle{
+    position: absolute;
+	width: 306px;
+	height: 155px;
+	left: 0;
+	right: 0;
+	background-image: url("https://s3.amazonaws.com/thirtysecondstories.com/images/title.gif");
+	background-repeat: no-repeat;
+    margin-left: auto;
+	margin-right: auto;
+	margin-top: 100px;
+	margin-bottom: 0px;
+
+	
+}
+
 
 #info-btn {
     width: 38px;
@@ -175,7 +206,7 @@ and (max-device-width : 800px) {
     background-position: 0 -38px;
 }
 #info-overlay { /* lex made some changes here */
-    text-align: right;
+    
     display: none;
     margin: 0;
     background: #fff;
@@ -185,7 +216,7 @@ and (max-device-width : 800px) {
     top: 0px;
     position: absolute;
     z-index: 6;
-    text-align: center;
+    text-align: left;
     -webkit-transition: opacity 0.2s ease-out;
     -moz-transition: opacity 0.2s ease-out;
     -ms-transition: opacity 0.2s ease-out;
@@ -203,15 +234,19 @@ and (max-device-width : 800px) {
     margin-top: 10%;
     margin-left: 20%;
 }
+
+
 #info-overlay #social {
-    position: fixed;
-    left: 50%;
-    bottom: 80px;
-    width: 200px;
-    height: 40px;
+   position: absolute;
+    left: 48.5%;
+    bottom: 200px;
+        height: 40px;
     margin: 0 0 0 -100px;
     text-align: center;
 }
+
+
+
 #channel-buttons {
     font-size: 12pt;
     position: absolute;
@@ -248,10 +283,10 @@ a:visited   {text-decoration: none; color: #000}
 a:hover         {text-decoration: none; color: #000}
 a:active    {text-decoration: none; color: #000}
 
-#info-overlay a:link        {text-decoration: none; color: #00f}
-#info-overlay a:visited     {text-decoration: none; color: #00f}
-#info-overlay a:hover       {text-decoration: none; color: #00f}
-#info-overlay a:active      {text-decoration: none; color: #00f}
+#info-overlay a:link        {text-decoration: none; color: #039}
+#info-overlay a:visited     {text-decoration: none; color: #039}
+#info-overlay a:hover       {text-decoration: none; color: #039}
+#info-overlay a:active      {text-decoration: none; color: #039}
 
 #channel-buttons li.selected a:link         {text-decoration: none; color: #fff}
 #channel-buttons li.selected a:visited  {text-decoration: none; color: #fff}
