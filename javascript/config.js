@@ -5,11 +5,11 @@ var Config = {
   channels: [
     {
       title: "EP1",
-      videos: ["1.mov", "2.mov", "3.mov", "4.mov", "5.mov", "11.mov"]
+      videos: ["1.mov", "2.mov", "3.mov", "4.mov", "5.mov"]
     },
-	{
+	  {
       title: "EP2",
-      videos: ["6.mov", "7.mov", "8.mov", "9.mov", "10.mov"]
-    }
+      videos: ["6.mov", "7.mov", "8.mov", "9.mov", "10.mov", "11.mov"]
+    },
   ]
 };
