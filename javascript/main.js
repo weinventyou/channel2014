@@ -31,8 +31,11 @@ function enterSite(self) {
 
     $(document).keydown(function(e) {
         SPACEBAR_KEYCODE = 32;
-        if (e.keyCode == SPACEBAR_KEYCODE) {
+        RIGHT_KEYCODE = 39;
+        if (e.keyCode == RIGHT_KEYCODE) {
             Player.switch_media();
+        } else if (e.keyCode == SPACEBAR_KEYCODE) {
+            Player.toggle_video();
         }
     });
 }

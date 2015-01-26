@@ -38,6 +38,15 @@ Player.switch_video = function(video_url) {
     temp_video.src = video_url;
 }
 
+Player.toggle_video = function() {
+    var video = document.getElementById("bgvideo");
+    if(video.paused) {
+        video.play();
+    } else {
+        video.pause();
+    }
+}
+
 Player.change_channel = function(channel) {
     var channel = parseInt(channel);
     if(this.invalid_channel(channel)) {
